@@ -1,6 +1,7 @@
+import { FC } from "react";
 import "./styles.css";
 
-const Header = () => {
+const Index: FC = () => {
   return (
     <>
       <header>
@@ -17,4 +18,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Index;

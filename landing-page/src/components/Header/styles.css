@@ -1,6 +1,7 @@
 header {
   background-color: #c7d0d9;
   padding: 20px 80px;
+  transition: all 1s ease;
 }
 
 .header-navigation {
