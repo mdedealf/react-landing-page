@@ -1,0 +1,28 @@
+header {
+  background-color: #c7d0d9;
+  padding: 20px 80px;
+}
+
+.header-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-author {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #0b0c0e;
+}
+
+.header-menu {
+  display: flex;
+  gap: 40px;
+}
+
+.header-menu a {
+  font-size: 18px;
+  color: #0b0c0e;
+  text-decoration: none;
+}
