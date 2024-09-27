@@ -5,7 +5,7 @@ import "./styles.css";
 const Index: FC = () => {
   return (
     <>
-      <section className="hero-section">
+      <section className="hero-section just">
         <div className="hero-wrapper">
           <img src={HeroImage} alt="Hero image" />
           <div className="hero-infinite-text">

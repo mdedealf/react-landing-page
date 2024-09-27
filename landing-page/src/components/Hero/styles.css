@@ -1,5 +1,5 @@
 .hero-section {
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 68px);
   position: relative;
   display: flex;
