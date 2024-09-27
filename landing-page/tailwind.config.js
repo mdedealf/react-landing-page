@@ -18,15 +18,28 @@ export default {
     },
     fontSize: {
       "18px": "18px",
+      "40px": "40px",
+      "27px": "27px",
     },
     fontWeight: {
       "400px": "400px",
+      "500px": "500px",
     },
     lineHeight: {
       "28px": "28px",
+      "48px": "48px",
+      "37px": "37px",
     },
     gap: {
       "40px": "40px",
+    },
+    margin: {
+      "80px": "80px",
+      "160px": "160px",
+    },
+    flexBasis: {
+      "30%": "30%",
+      "70%": "70%",
     },
   },
   plugins: [],

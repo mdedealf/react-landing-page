@@ -5,7 +5,7 @@ import Project from "./components/Project";
 
 const Index: FC = () => {
   return (
-    <section className="portofolios-section">
+    <section id="portofolio" className="portofolios-section">
       <div className="portofolio-left">Recent Work</div>
       <div className="portofolio-right">
         {DUMMY_PROJECTS.map((project, index) => (
