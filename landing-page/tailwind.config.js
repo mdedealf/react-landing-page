@@ -32,6 +32,7 @@ export default {
     },
     gap: {
       "40px": "40px",
+      "32px": "32px",
     },
     margin: {
       "80px": "80px",
@@ -40,6 +41,9 @@ export default {
     flexBasis: {
       "30%": "30%",
       "70%": "70%",
+    },
+    borderRadius: {
+      "1px": "1px",
     },
   },
   plugins: [],

@@ -5,14 +5,16 @@ import Project from "./components/Project";
 
 const Index: FC = () => {
   return (
-    <section id="portofolio" className="portofolios-section">
-      <div className="portofolio-left">Recent Work</div>
-      <div className="portofolio-right">
+    <section id="portofolio" className="flex my-160px mx-80px">
+      <div className="font-500px leading-48px basis-30% text-40px">
+        Recent Work
+      </div>
+      <div className="flex flex-col text-27px leading-37px font-400px basis-70% gap-y-32px">
         {DUMMY_PROJECTS.map((project, index) => (
           <>
             <Project key={index} {...project} />
             {index < DUMMY_PROJECTS.length - 1 && (
-              <div className="project-divider"></div>
+              <div className="border-t border-light-gray"></div>
             )}
           </>
         ))}

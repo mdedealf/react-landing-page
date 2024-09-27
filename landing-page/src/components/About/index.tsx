@@ -4,7 +4,7 @@ import "./styles.css";
 const Index: FC = () => {
   return (
     <>
-      <section id="about" className="flex ml-80px mt-160px mr-80px mb-160px">
+      <section id="about" className="flex mx-80px my-160px">
         <div className="basis-30% text-40px font-500px leading-48px">About</div>
         <div className="basis-70% leading-37px font-400px text-27px">
           <p>
