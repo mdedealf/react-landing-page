@@ -1,14 +1,14 @@
 import { FC } from "react";
-import ArrowIcon from "../../../assets/icons/arrow-forward.svg";
 import "./styles.css";
+import LinkButton from "./LinkButton";
 
 const Project: FC<Project> = ({ name, roles, link }) => {
   return (
     <>
-      <div className="project-wrapper">
-        <div className="project-details">
-          <div className="project-name">{name}</div>
-          <div className="project-roles">
+      <div className="flex align-middle justify-between">
+        <div className="flex flex-col gap-y-18px">
+          <div className="text-60px font-400px">{name}</div>
+          <div className="flex gap-x-6px text-20px font-400px leading-72px">
             {roles.map((role, index) => (
               <>
                 <span key={index}>{role}</span>
@@ -17,10 +17,8 @@ const Project: FC<Project> = ({ name, roles, link }) => {
             ))}
           </div>
         </div>
-        <div className="project-link">
-          <a href={link} target="_blank">
-            <img src={ArrowIcon} alt="arrow forward icon" />
-          </a>
+        <div className="flex items-center justify-center p-20px cursor-pointer border border-dark-gray rounded-full h-85px w-85px">
+          <LinkButton link={link} />
         </div>
       </div>
     </>
