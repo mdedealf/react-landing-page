@@ -18,6 +18,7 @@ export default {
         "80px": "80px",
       },
       fontSize: {
+        "14px": "14px",
         "18px": "18px",
         "27px": "27px",
         "20px": "20px",
@@ -27,6 +28,7 @@ export default {
       fontWeight: {
         "400px": "400px",
         "500px": "500px",
+        "700p": "700px",
       },
       lineHeight: {
         "28px": "28px",
@@ -36,18 +38,23 @@ export default {
       },
       width: {
         "32px": "32px",
+        "64px": "64px",
         "85px": "85px",
       },
       height: {
         "32px": "32px",
+        "64px": "64px",
         "85px": "85px",
         "hero-h": "calc(100vh - 80px)",
       },
       gap: {
         "6px": "6px",
+        "12px": "12px",
         "18px": "18px",
+        "28px": "28px",
         "32px": "32px",
         "40px": "40px",
+        "64px": "64px",
       },
       padding: {
         "0px": "0px",
