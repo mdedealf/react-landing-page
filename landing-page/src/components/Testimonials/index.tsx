@@ -10,8 +10,8 @@ const Index: FC = () => {
       </div>
       <div className="flex flex-col basis-70% gap-y-64px">
         <>
-          {DUMMY_TESTIMONI.map((testiomoni, index) => (
-            <Testimoni key={index} {...testiomoni} />
+          {DUMMY_TESTIMONI.map((testimoni, index) => (
+            <Testimoni key={index} {...testimoni} />
           ))}
         </>
       </div>
