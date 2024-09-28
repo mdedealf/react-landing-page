@@ -13,7 +13,7 @@ const Index: FC = () => {
           <div className="flex gap-40px">
             <NavLink href={"#about"} title={"About"} />
             <NavLink href={"#portofolio"} title={"Work"} />
-            <NavLink href={"#"} title={"Contact"} />
+            <NavLink href={"#footer"} title={"Contact"} />
           </div>
         </nav>
       </header>
