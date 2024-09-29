@@ -5,7 +5,7 @@ import { FORM_INPUT } from "../../../constants/formInputs";
 const ContactForm: FC = () => {
   return (
     <div className="flex flex-col items-start gap-32px">
-      <h1 className="text-60px font-500px leading-72px text-dark-black">
+      <h1 className="text-60px font-500px leading-72px text-dark-black w-[630px]">
         Let’s build something cool together
       </h1>
       <>

@@ -6,7 +6,7 @@ import { CONTACT_LINKS } from "../../constants/contacLinks";
 
 const Contact: FC = () => {
   return (
-    <section className="flex items-start justify-between mx-80px my-160px gap-[120px]">
+    <section className="flex items-start justify-evenly mx-80px my-160px gap-[120px]">
       <div className="flex flex-col gap-[56px]">
         <img
           className="min-h-[300px] min-w-300px] object-cover"
