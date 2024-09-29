@@ -39,46 +39,44 @@ const Index: FC<BackgroundStyle> = ({ bg }) => {
   }, []);
 
   return (
-    <>
-      <header className={`${bg} py-26px px-80px relative`}>
-        <nav className="flex justify-between items-center">
-          <span className="text-18px font-400px leading-28px">
-            <RouteLink
-              styles={"text-dark-black"}
-              href={"/"}
-              title={"@Ayush Barnwal"}
-            />
-          </span>
-          <div className="hidden gap-40px text-18px md:flex">
-            {!isOpen && (
-              <>
-                <RouteLink
-                  styles={"text-dark-black"}
-                  href={"/#about"}
-                  title={"About"}
-                />
-                <RouteLink
-                  styles={"text-dark-black"}
-                  href={"/#portofolio"}
-                  title={"Work"}
-                />
-                <RouteLink
-                  styles={"text-dark-black"}
-                  href={"/#footer"}
-                  title={"Contact"}
-                />
-              </>
-            )}
-          </div>
-          {showHamburger && (
+    <header className={`${bg} py-26px px-80px relative`}>
+      <nav className="flex justify-between items-center">
+        <span className="text-18px font-400px leading-28px">
+          <RouteLink
+            styles={"text-dark-black"}
+            href={"/"}
+            title={"@Ayush Barnwal"}
+          />
+        </span>
+        <div className="hidden gap-40px text-18px md:flex">
+          {!isOpen && (
             <>
-              <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
-              {isOpen && <OverlayLink onClick={handleLinkClick} />}
+              <RouteLink
+                styles={"text-dark-black hover:text-dark-gray"}
+                href={"/#about"}
+                title={"About"}
+              />
+              <RouteLink
+                styles={"text-dark-black hover:text-dark-gray"}
+                href={"/#portofolio"}
+                title={"Work"}
+              />
+              <RouteLink
+                styles={"text-dark-black hover:text-dark-gray"}
+                href={"/#footer"}
+                title={"Contact"}
+              />
             </>
           )}
-        </nav>
-      </header>
-    </>
+        </div>
+        {showHamburger && (
+          <>
+            <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
+            {isOpen && <OverlayLink onClick={handleLinkClick} />}
+          </>
+        )}
+      </nav>
+    </header>
   );
 };
 
