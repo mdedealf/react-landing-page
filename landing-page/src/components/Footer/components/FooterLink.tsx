@@ -10,7 +10,11 @@ const FooterLink: FC = () => {
       <div className="flex gap-32px text-light-gray  font-400px text-18px leading-28px">
         <>
           {FOOTER_LINKS.map((link, index) => (
-            <a className="hover:text-off-white" href={link.link} key={index}>
+            <a
+              className="hover:text-off-white transition-all"
+              href={link.link}
+              key={index}
+            >
               {link.label}
             </a>
           ))}
