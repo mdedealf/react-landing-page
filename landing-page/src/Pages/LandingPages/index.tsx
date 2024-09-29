@@ -11,12 +11,14 @@ const LandingPage: FC = () => {
   return (
     <>
       <Header />
-      <Hero />
-      <About />
-      <Portofolio />
-      <Gallery />
-      <Testimonials />
-      <Footer />
+      <main>
+        <Hero />
+        <About />
+        <Portofolio />
+        <Gallery />
+        <Testimonials />
+        <Footer />
+      </main>
     </>
   );
 };

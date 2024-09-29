@@ -5,7 +5,7 @@ import NavLink from "./components/NavLink";
 const Index: FC = () => {
   return (
     <>
-      <header className="bg-light-gray py-26px px-80px">
+      <header className="bg-transparent py-26px px-80px">
         <nav className="flex justify-between items-center">
           <span className="text-18px font-400px leading-28px">
             @Ayush Barnwal
