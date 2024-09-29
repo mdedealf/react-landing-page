@@ -1,4 +1,4 @@
-type FooterLink = {
+type SocialLinks = {
   label: string;
   link: string;
 };

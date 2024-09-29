@@ -8,7 +8,7 @@ const TextInput: FC<InputDetail> = ({
   name,
 }) => {
   return (
-    <div className="flex flex-col gap-12px">
+    <div className="flex flex-col gap-12px w-full">
       <label
         className="text-18px font-400px leading-28px text-dark-black"
         htmlFor={labelFor}
@@ -21,7 +21,7 @@ const TextInput: FC<InputDetail> = ({
         name={name}
         placeholder={placeholder}
       />
-      <div className="border-b border-dark-gray w-full"></div>
+      <div className="border-b border-dark-black w-full"></div>
     </div>
   );
 };

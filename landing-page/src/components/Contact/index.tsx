@@ -2,31 +2,9 @@ import { FC } from "react";
 import ContactForm from "./components/ContactForm";
 import AuthorImage from "../../assets/images/author-profile-large.png";
 import { Link } from "react-router-dom";
+import { CONTACT_LINKS } from "../../constants/contacLinks";
 
 const Contact: FC = () => {
-  const SocialLinks: FooterLink[] = [
-    {
-      label: "LinkedIn",
-      link: "https://www.linkedin.com/",
-    },
-    {
-      label: "X",
-      link: "https://x.com/?lang=en",
-    },
-    {
-      label: "Instagram",
-      link: "https://www.instagram.com/",
-    },
-    {
-      label: "Webflow",
-      link: "https://webflow.com/",
-    },
-    {
-      label: "Figma",
-      link: "https://figma.com/",
-    },
-  ];
-
   return (
     <section className="flex items-start justify-between mx-80px my-160px gap-[120px]">
       <div className="flex flex-col gap-[56px]">
@@ -40,7 +18,7 @@ const Contact: FC = () => {
             <span className="text-18px font-400px leading-28px text-dark-gray">
               Contact Details
             </span>
-            <div className="flex flex-col text-27px font-400px leading-37px text-dark-black">
+            <div className="flex flex-col text-27px font-400px leading-37px text-dark-black gap-6px">
               <span>ayush.barnwal@brightscout.com</span>
               <span>+91 8651447521</span>
             </div>
@@ -49,9 +27,9 @@ const Contact: FC = () => {
             <span className="text-18px font-400px leading-28px text-dark-gray">
               Socials
             </span>
-            <div className="flex flex-col text-27px font-400px leading-37px text-dark-black">
+            <div className="flex flex-col text-27px font-400px leading-37px text-dark-black gap-6px">
               <>
-                {SocialLinks.map((link, index) => (
+                {CONTACT_LINKS.map((link, index) => (
                   <Link
                     className="hover:text-light-gray transition-all"
                     to={link.link}

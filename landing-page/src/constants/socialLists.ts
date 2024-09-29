@@ -1,4 +1,4 @@
-const FOOTER_LINKS: FooterLink[] = [
+const SOCIAL_LINKS: SocialLinks[] = [
   {
     label: "LinkedIn",
     link: "https://www.linkedin.com/",
@@ -17,4 +17,4 @@ const FOOTER_LINKS: FooterLink[] = [
   },
 ];
 
-export { FOOTER_LINKS };
+export { SOCIAL_LINKS };

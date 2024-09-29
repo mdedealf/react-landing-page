@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { FOOTER_LINKS } from "../../../constants/footerLinks";
+import { SOCIAL_LINKS } from "../../../constants/socialLists";
 
 const FooterLink: FC = () => {
   return (
@@ -7,9 +7,9 @@ const FooterLink: FC = () => {
       <span className="text-18px font-500px leading-28px text-light-gray">
         Build with 💖 by Brightscout & Ayush
       </span>
-      <div className="flex gap-32px text-light-gray  font-400px text-18px leading-28px">
+      <div className="flex gap-32px text-light-gray font-400px text-18px leading-28px">
         <>
-          {FOOTER_LINKS.map((link, index) => (
+          {SOCIAL_LINKS.map((link, index) => (
             <a
               className="hover:text-off-white transition-all"
               href={link.link}

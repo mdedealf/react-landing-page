@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./Pages/LandingPages";
-import ContactUs from "./Pages/ContactUs";
+import ContactUs from "./Pages/ContactUsPages";
 
 const App: FC = () => {
   return (

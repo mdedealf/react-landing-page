@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./Pages/LandingPages/index.tsx";
 import "./index.css";
-import ContactUs from "./Pages/ContactUs/index.tsx";
-import PageNotFound from "./Pages/PageNotFound/index.tsx";
+import ContactUsPage from "./Pages/ContactUsPages/index.tsx";
+import NotFoundPage from "./Pages/NotFoundPages/index.tsx";
 
 /* 
   Routes configuration
@@ -13,11 +13,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
-    errorElement: <PageNotFound />,
+    errorElement: <NotFoundPage />,
   },
   {
     path: "/contact-us",
-    element: <ContactUs />,
+    element: <ContactUsPage />,
   },
 ]);
 
