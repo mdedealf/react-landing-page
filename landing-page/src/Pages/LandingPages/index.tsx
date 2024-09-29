@@ -12,6 +12,11 @@ const LandingPage: FC = () => {
   const { hash, pathname } = useLocation();
   const navigate = useNavigate();
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   // effect to move the view based on selected id
   useEffect(() => {
     if (hash) {
@@ -24,7 +29,7 @@ const LandingPage: FC = () => {
         setTimeout(() => {
           // Replace URL to remove hash without adding a new entry to history
           navigate(pathname, { replace: true });
-        }, 500); // Add slight delay for the scroll to complete before URL is updated
+        }, 0); // Add slight delay for the scroll to complete before URL is updated
       }
     }
   }, [hash, pathname, navigate]);

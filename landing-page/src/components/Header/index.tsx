@@ -1,9 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import "./styles.css";
 import RouteLink from "./components/RouteLink";
-import HamburgerIcon from "../../assets/icons/hamburger-menu.svg";
-import CloseIcon from "../../assets/icons/close-icon.svg";
 import OverlayLink from "./components/OverlayLink";
+import HamburgerButton from "./components/HamburgerButton";
 
 interface BackgroundStyle {
   bg: string;
@@ -73,26 +72,7 @@ const Index: FC<BackgroundStyle> = ({ bg }) => {
           </div>
           {showHamburger && (
             <>
-              <button
-                onClick={toggleMenu}
-                className={`fixed flex items-center justify-center right-[40px] top-[40px] w-[80px] h-[80px] ${
-                  isOpen ? "bg-off-white" : "bg-dark-black"
-                } text-off-white focus:outline-none rounded-full z-10 transition-all`}
-              >
-                {isOpen ? (
-                  <img
-                    className="transition-all"
-                    src={CloseIcon}
-                    alt="Hamburger icon"
-                  />
-                ) : (
-                  <img
-                    className="transition-all"
-                    src={HamburgerIcon}
-                    alt="Hamburger icon"
-                  />
-                )}
-              </button>
+              <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
               {isOpen && <OverlayLink onClick={handleLinkClick} />}
             </>
           )}

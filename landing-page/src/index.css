@@ -16,3 +16,9 @@ p {
   margin: 0;
   padding: 0;
 }
+
+#about,
+#portofolio,
+#footer {
+  scroll-margin-top: 80px;
+}
