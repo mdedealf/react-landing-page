@@ -17,7 +17,7 @@ const Project: FC<Project> = ({ name, roles, link }) => {
             ))}
           </div>
         </div>
-        <div className="flex items-center justify-center p-20px cursor-pointer border border-dark-gray rounded-full h-85px w-85px">
+        <div className="flex group items-center justify-center p-20px cursor-pointer border border-dark-gray rounded-full h-85px w-85px hover:bg-dark-black transition-colors duration-300 relative">
           <LinkButton link={link} />
         </div>
       </div>
