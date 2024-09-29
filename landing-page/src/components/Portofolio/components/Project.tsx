@@ -1,6 +1,6 @@
 import { FC } from "react";
-import "./styles.css";
 import LinkButton from "./LinkButton";
+import "./styles.css";
 
 const Project: FC<Project> = ({ name, roles, link }) => {
   return (
