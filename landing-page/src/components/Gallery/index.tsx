@@ -7,8 +7,8 @@ import "./styles.css";
 const GalleryWorks: FC = () => {
   const [ref, { width }] = useMeasure();
 
-  const FAST_DURATION = 40;
-  const SLOW_DURATION = 85;
+  const FAST_DURATION = 35;
+  const SLOW_DURATION = 90;
   const [durationLeft, setDurationLeft] = useState(FAST_DURATION); // Separate duration for left scroll
   const [durationRight, setDurationRight] = useState(FAST_DURATION); // Separate duration for right scroll
 
@@ -87,7 +87,7 @@ const GalleryWorks: FC = () => {
 
   return (
     <section className="flex flex-col w-full h-full gap-40px mb-160px">
-      <div className="flex flex-col items-start justify-center h-full gap-40px w-full overflow-hidden flex-nowrap">
+      <div className="flex flex-col items-start justify-center h-full gap-40px w-full flex-nowrap">
         <motion.div
           className="flex items-center justify-center gap-40px h-[306px]"
           ref={ref}
@@ -104,7 +104,7 @@ const GalleryWorks: FC = () => {
           <Project />
         </motion.div>
       </div>
-      <div className="flex flex-col items-end justify-center h-full gap-40px w-full overflow-hidden flex-nowrap">
+      <div className="flex flex-col items-end justify-center h-full gap-40px w-full flex-nowrap">
         <motion.div
           className="flex items-center justify-center gap-40px h-[306px]"
           ref={ref}
