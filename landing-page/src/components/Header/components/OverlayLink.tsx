@@ -8,7 +8,7 @@ interface OverlayLinkProps {
 
 const OverlayLink: FC<OverlayLinkProps> = ({ onClick }) => {
   return (
-    <div className="fixed justify-between top-0 left-0 right-0 bottom-0 flex bg-[rgba(0,0,0,0.5)] h-screen w-screen z-[9]">
+    <div className="fixed justify-between top-0 left-0 right-0 bottom-0 flex bg-[rgba(0,0,0,0.5)] h-screen w-screen z-[9] transition-all">
       <div className="bg-transparent basis-[50%]"></div>
       <div className="flex flex-col items-start justify-between pl-[67px] pt-[120px] pb-[57px] bg-dark-black basis-[50%] text-60px font-500px leading-72px text-off-white gap-28px">
         <div className="flex flex-col items-start gap-28px">

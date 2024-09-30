@@ -18,7 +18,7 @@
   color: #f4f7fa;
   font-size: 150px;
   line-height: 180px;
-  animation: loop 40s infinite linear;
+  animation: loop 30s infinite linear;
 }
 
 @keyframes loop {
@@ -26,6 +26,6 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-150%);
+    transform: translateX(-220%);
   }
 }

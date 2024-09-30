@@ -41,14 +41,14 @@ const Index: FC<BackgroundStyle> = ({ bg }) => {
   return (
     <header id="header" className={`${bg} py-26px px-80px relative`}>
       <nav className="flex justify-between items-center">
-        <span className="text-18px font-400px leading-28px">
+        <span className="text-18px font-400px">
           <RouteLink
-            styles={"text-dark-black"}
+            styles={"text-dark-black leading-28px"}
             href={"/#header"}
             title={"@Ayush Barnwal"}
           />
         </span>
-        <div className="hidden gap-40px text-18px md:flex">
+        <div className="hidden gap-40px text-18px leading-[21px] md:flex">
           {!isOpen && (
             <>
               <RouteLink
