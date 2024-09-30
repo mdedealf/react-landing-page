@@ -7,6 +7,7 @@ import Gallery from "../../components/Gallery";
 import Testimonials from "../../components/Testimonials";
 import Footer from "../../components/Footer";
 import { useLocation, useNavigate } from "react-router-dom";
+import { ToggleProvider } from "../../contexts/ToggleContext";
 
 const LandingPage: FC = () => {
   const { hash, pathname } = useLocation();
@@ -35,7 +36,7 @@ const LandingPage: FC = () => {
   }, [hash, pathname, navigate]);
 
   return (
-    <>
+    <ToggleProvider>
       <Header bg={"bg-light-gray"} />
       <main>
         <Hero />
@@ -45,7 +46,7 @@ const LandingPage: FC = () => {
         <Testimonials />
         <Footer />
       </main>
-    </>
+    </ToggleProvider>
   );
 };
 
