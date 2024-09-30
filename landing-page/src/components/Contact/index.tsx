@@ -23,11 +23,11 @@ const Contact: FC = () => {
               <span>+91 8651447521</span>
             </div>
           </div>
-          <div className="flex flex-col gap-[8px]">
+          <div className="flex flex-col items-start gap-[8px]">
             <span className="text-18px font-400px leading-28px text-dark-gray">
               Socials
             </span>
-            <div className="flex flex-col text-27px font-400px leading-37px text-dark-black gap-6px">
+            <div className="flex flex-col items-start text-27px font-400px leading-37px text-dark-black gap-6px">
               <>
                 {CONTACT_LINKS.map((link, index) => (
                   <Link
