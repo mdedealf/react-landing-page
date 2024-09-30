@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import "./styles.css";
 import HeroImage from "../../assets/images/hero-img.png";
 import OverlayMenu from "./components/OverlayMenu";
@@ -19,6 +19,22 @@ const Index: FC = () => {
     setIsOpen(false);
     setShowHamburger(!showHamburger);
   };
+
+  // Handling scrolling when > screen height view setShowHamburget is true
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight) {
+        setIsOpen(false);
+        setShowHamburger(false);
+      }
+    };
+
+    // Adding event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // clean up event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
