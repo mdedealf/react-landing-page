@@ -20,7 +20,7 @@ const Index: FC = () => {
     setShowHamburger(!showHamburger);
   };
 
-  // Handling scrolling when > screen height view setShowHamburget is true
+  // Handling scrolling when > screen height view setShowHamburger & seIsOpen are false
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight) {
