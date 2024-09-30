@@ -23,7 +23,7 @@ const Index: FC = () => {
   // Handling scrolling when > screen height view setShowHamburger & seIsOpen are false
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight) {
+      if (window.scrollY > window.innerHeight / 2) {
         setIsOpen(false);
         setShowHamburger(false);
       }
@@ -45,7 +45,6 @@ const Index: FC = () => {
             src={HeroImage}
             alt="Hero image"
           />
-          {/* <OverlayMenu isOpen={isOpen} toggleMenu={toggleMenu} /> */}
           <OverlayMenu isOpen={isOpen} toggleMenu={toggleMenu} />
           <div className="hero-infinite-text">
             <h1>flow Developer - UI/UX Designer - Web Designer</h1>

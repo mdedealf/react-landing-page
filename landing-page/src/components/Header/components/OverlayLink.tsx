@@ -14,7 +14,7 @@ const OverlayLink: FC<OverlayLinkProps> = ({ onClick }) => {
         <div className="flex flex-col gap-28px">
           <RouteLink
             styles={"text-off-white"}
-            href={"/"}
+            href={"/#header"}
             title={"Home"}
             onClick={onClick}
           />
