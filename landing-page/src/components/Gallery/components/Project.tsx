@@ -5,7 +5,7 @@ import GalleryItems from "./GalleryItems";
 const Project: FC = () => {
   return (
     <>
-      {DUMMY_GALLERY.map((project, index) => (
+      {[...DUMMY_GALLERY, ...DUMMY_GALLERY].map((project, index) => (
         <GalleryItems key={index} {...project} />
       ))}
     </>

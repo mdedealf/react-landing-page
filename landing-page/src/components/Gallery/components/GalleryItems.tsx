@@ -3,9 +3,9 @@ import { FC } from "react";
 const GalleryItems: FC<Gallery> = ({ image, alt, link }) => {
   return (
     <>
-      <div className="relative group hover:shadow-2xl flex items-center justify-center bg-light-gray h-[306px] w-[444px] rounded-[4px] transition-all">
+      <div className="relative group hover:drop-shadow-2xl flex items-center justify-center bg-light-gray h-[306px] w-[444px] rounded-[4px] transition-all">
         <img
-          className="w-[348px] h-[194px] object-cover blur-none group-hover:blur-sm"
+          className="w-[348px] h-[194px] object-cover blur-none group-hover:blur-md"
           src={image}
           alt={alt}
         />
