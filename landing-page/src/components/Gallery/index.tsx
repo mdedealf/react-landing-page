@@ -86,7 +86,7 @@ const GalleryWorks: FC = () => {
   }, [xTranslationRight, width, durationRight, rerenderRight, mustFinishRight]);
 
   return (
-    <section className="flex flex-col w-full h-full gap-40px mb-160px">
+    <section className="flex flex-col w-full h-full gap-40px mb-160px overflow-hidden">
       <div className="flex flex-col items-start justify-center h-full gap-40px w-full flex-nowrap">
         <motion.div
           className="flex items-center justify-center gap-40px h-[306px]"
@@ -121,6 +121,7 @@ const GalleryWorks: FC = () => {
           <Project />
         </motion.div>
       </div>
+      <div className="bg-transparent pt-[40px]" />
     </section>
   );
 };
