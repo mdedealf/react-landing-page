@@ -7,6 +7,8 @@ const TextInput: FC<InputDetail> = ({
   placeholder,
   type,
   name,
+  errors,
+  touched,
 }) => {
   return (
     <div className="flex flex-col gap-12px w-full">
@@ -23,6 +25,10 @@ const TextInput: FC<InputDetail> = ({
         placeholder={placeholder}
       />
       <div className="border-b border-dark-black w-full"></div>
+
+      {touched && errors && (
+        <span className="error-message text-red-500">{errors}</span>
+      )}
     </div>
   );
 };
