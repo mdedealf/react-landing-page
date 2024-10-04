@@ -2,6 +2,8 @@ import { FC, useEffect } from "react";
 import Header from "../../components/Header/";
 import { useAppDispatch, useAppSelector } from "../../hooks/useSelector";
 import { fetchSubmittedForm } from "../../features/contactMe/submitFormSlice";
+import { TABLE_HEADER } from "../../constants/tableHeader";
+import TableData from "../../components/Table/TableData";
 
 const Index: FC = () => {
   const dispatch = useAppDispatch();
@@ -12,31 +14,37 @@ const Index: FC = () => {
     dispatch(fetchSubmittedForm());
   }, [dispatch]);
 
-  if (status === "failed") return <div>{error}</div>;
-  if (status === "loading") return <div>Loading</div>;
   return (
     <>
-      <Header bg={"bg-transparent"} />
-      <div className="flex flex-col items-start m-[80px] gap-[30px] ">
-        <h1 className="text-27px font-bold">Submitted Message</h1>
-        <table className="table-auto border-collapse border border-slate-500 w-full text-18px">
+      <Header bg={"bg-light-gray"} />
+      {status === "loading" && (
+        <div className="flex items-center justify-center text-dark-black text-27px font-bold h-screen w-screen">
+          Loading...
+        </div>
+      )}
+      {status === "failed" && (
+        <div className="flex items-center justify-center text-dark-black text-27px font-bold h-screen w-screen">
+          {error}
+        </div>
+      )}
+      <div className="flex flex-col items-start m-[80px] gap-[30px]">
+        <h1 className="text-18px md:text-27px font-bold">
+          Submitted Message Table
+        </h1>
+        <table className="table-auto border-separate border-spacing-2 border border-slate-500 w-full text-18px">
           <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Subject</th>
-              <th>Message</th>
+            <tr className="bg-gray-200 text-gray-700">
+              {TABLE_HEADER.map((title, index) => (
+                <th className="py-2 px-4 border-b text-left" key={index}>
+                  {title}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
             {lists.map((list, index) => (
-              <tr key={index}>
-                <td>{list.id}</td>
-                <td>{list.name}</td>
-                <td>{list.email}</td>
-                <td>{list.subject}</td>
-                <td>{list.message}</td>
+              <tr key={index} className="hover:bg-gray-100">
+                <TableData {...list} />
               </tr>
             ))}
           </tbody>
