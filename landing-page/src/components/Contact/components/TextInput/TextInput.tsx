@@ -1,3 +1,4 @@
+import { Field } from "formik";
 import { FC } from "react";
 
 const TextInput: FC<InputDetail> = ({
@@ -15,10 +16,10 @@ const TextInput: FC<InputDetail> = ({
       >
         {label}
       </label>
-      <input
+      <Field
         className="text-27px font-400px leading-37px placeholder:text-light-gray focus:outline-none focus:ring-0"
-        type={type}
         name={name}
+        type={type}
         placeholder={placeholder}
       />
       <div className="border-b border-dark-black w-full"></div>
