@@ -1,12 +1,16 @@
 import { FC } from "react";
 import { FORM_INPUT } from "../../../constants/formInputs";
 import { Form, Formik, FormikHelpers } from "formik";
-import { ContactMe } from "../../../types/contactMe";
 import TextInput from "./TextInput/TextInput";
-import axios from "axios";
+// import axios from "axios";
 import * as Yup from "yup";
+import { useAppDispatch, useAppSelector } from "../../../hooks/useSelector";
+import { submitForm } from "../../../features/contactUs/submitFormSlice";
 
 const ContactForm: FC = () => {
+  const dispatch = useAppDispatch();
+  const { error, status } = useAppSelector((state) => state.submitForm);
+
   const initialValues: ContactMe = {
     name: "",
     email: "",
@@ -22,18 +26,16 @@ const ContactForm: FC = () => {
     console.log("button contact me clicked");
 
     try {
-      const { status } = await axios.post(
-        "http://localhost:3000/contact-me",
-        values
-      );
+      // dispatch redux action formSubmit
+      const submittedResult = await dispatch(submitForm(values));
 
-      if (status !== 201) throw new Error("Failed sending the message");
-
-      formikHelpers.resetForm();
-      alert("Your message was sent!");
+      if (submitForm.fulfilled.match(submittedResult)) {
+        formikHelpers.resetForm();
+      } else {
+        throw new Error("Failed sending the message");
+      }
     } catch (error) {
-      console.error("Error sending the message", error);
-      alert(`Failed to send your message, please check again. ${error}`);
+      console.log(`Failed to send your message, please check again. ${error}`);
     }
   };
 
@@ -54,7 +56,23 @@ const ContactForm: FC = () => {
       <h1 className="text-60px font-500px leading-72px text-dark-black w-[630px]">
         Let’s build something cool together
       </h1>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full gap-[30px]">
+        {status === "loading" && (
+          <div className="w-full font-bold text-[16px] bg-light-gray p-20px rounded-md">
+            Loading...
+          </div>
+        )}
+        {status === "failed" && (
+          <div className="w-full font-bold text-[16px] bg-light-gray p-20px rounded-md text-red-600">
+            {error}
+          </div>
+        )}
+        {status === "succeeded" && (
+          <div className="w-full font-bold text-[16px] bg-light-gray p-20px rounded-md">
+            Your message was sent!
+          </div>
+        )}
+
         <Formik
           onSubmit={handleContactMe}
           initialValues={initialValues}
