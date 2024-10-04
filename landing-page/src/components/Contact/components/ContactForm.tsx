@@ -5,11 +5,11 @@ import TextInput from "./TextInput/TextInput";
 // import axios from "axios";
 import * as Yup from "yup";
 import { useAppDispatch, useAppSelector } from "../../../hooks/useSelector";
-import { submitForm } from "../../../features/contactUs/submitFormSlice";
+import { submitForm } from "../../../features/contactMe/submitFormSlice";
 
 const ContactForm: FC = () => {
   const dispatch = useAppDispatch();
-  const { error, status } = useAppSelector((state) => state.submitForm);
+  const { error, status } = useAppSelector((state) => state.contactMe);
 
   const initialValues: ContactMe = {
     name: "",

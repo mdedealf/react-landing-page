@@ -1,28 +1,30 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-type SubmittedData = {
+type SubmitFormData = {
   name: string;
   email: string;
   subject: string;
   message: string;
 };
 
-interface SubmittedDataState {
-  lists: SubmittedData[];
+// Submit form action
+interface SubmitFormDataState {
+  lists: ContactMeData[];
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null | undefined;
 }
 
-const initialState: SubmittedDataState = {
+const initialState: SubmitFormDataState = {
   lists: [],
   status: "idle",
   error: null,
 };
 
+// Action : submit form data into API
 export const submitForm = createAsyncThunk(
-  "contactUsData/submitForm",
-  async (contactData: SubmittedData, { rejectWithValue }) => {
+  "contactUs/submitForm",
+  async (contactData: SubmitFormData, { rejectWithValue }) => {
     try {
       const { status } = await axios.post(
         "http://localhost:3000/contact-me",
@@ -42,25 +44,47 @@ export const submitForm = createAsyncThunk(
   }
 );
 
+// Action : get submitted form data from API
+export const fetchSubmittedForm = createAsyncThunk(
+  "contactUs/fetchSubmittedForm",
+  async () => {
+    const submittedData = await axios.get("http://localhost:3000/contact-me");
+    console.log(submittedData);
+    return submittedData.data as ContactMeData[];
+  }
+);
+
 const contactUsDataSlice = createSlice({
   name: "contactUsData",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    // handling post form data
     builder
       .addCase(submitForm.pending, (state) => {
         state.status = "loading";
         state.error = null;
       })
-      .addCase(submitForm.fulfilled, (state, action) => {
+      .addCase(submitForm.fulfilled, (state) => {
         state.status = "succeeded";
-
-        // add submitted form to lists
-        state.lists.push(action.payload);
       })
       .addCase(submitForm.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload as string;
+      });
+
+    // handle fetch form data
+    builder
+      .addCase(fetchSubmittedForm.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchSubmittedForm.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.lists = action.payload;
+      })
+      .addCase(fetchSubmittedForm.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
       });
   },
 });

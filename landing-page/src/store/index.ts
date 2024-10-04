@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import submitFormReducer from "../features/contactUs/submitFormSlice";
+import contactMeDataReducer from "../features/contactMe/submitFormSlice";
 
 export const store = configureStore({
   reducer: {
-    submitForm: submitFormReducer,
+    contactMe: contactMeDataReducer,
   },
 });
 
