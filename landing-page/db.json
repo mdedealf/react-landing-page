@@ -62,6 +62,13 @@
       "email": "testing@gmail.com",
       "subject": "subject nya adalah ini",
       "message": "testing message"
+    },
+    {
+      "id": "796a",
+      "name": "testing ke 2",
+      "email": "test2@gmail.com",
+      "subject": "testing ke 2",
+      "message": "testing ke 2 testing ke 2"
     }
   ]
 }
