@@ -1,14 +1,16 @@
-type ContactMe = {
+type ContactUs = {
   name: string;
   email: string;
   subject: string;
   message: string;
 };
 
-type ContactMeData = {
+type ContactUsData = {
   id: string;
   name: string;
   email: string;
   subject: string;
   message: string;
 };
+
+export { ContactUs, ContactUsData };

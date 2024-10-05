@@ -4,11 +4,11 @@ type InputDetail = {
   placeholder: string;
   type: string;
   name: string;
-  errors?: FormikErrors<ContactMe>;
-  touched?: FormikTouched<ContactMe>;
+  errors?: FormikErrors<ContactUs>;
+  touched?: FormikTouched<ContactUs>;
 };
 
-type ContactMe = {
+type ContactUs = {
   name: string;
   email: string;
   subject: string;

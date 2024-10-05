@@ -1,14 +1,14 @@
 import { FC, useEffect } from "react";
 import Header from "../../components/Header/";
 import { useAppDispatch, useAppSelector } from "../../hooks/useSelector";
-import { fetchSubmittedForm } from "../../features/contactMe/submitFormSlice";
+import { fetchSubmittedForm } from "../../features/contactUs/contactUsSlicer";
 import { TABLE_HEADER } from "../../constants/tableHeader";
 import TableData from "../../components/Table/TableData";
 import RequestMessage from "../../components/RequestMessage";
 
 const Index: FC = () => {
   const dispatch = useAppDispatch();
-  const { lists, status, error } = useAppSelector((state) => state.contactMe);
+  const { lists, status, error } = useAppSelector((state) => state.contactUs);
 
   // Fetch submitted form data from API
   useEffect(() => {

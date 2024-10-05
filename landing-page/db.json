@@ -1,5 +1,5 @@
 {
-  "contact-me": [
+  "contact-us": [
     {
       "id": "962d",
       "name": "Jhonny Doe",
@@ -69,6 +69,34 @@
       "email": "test2@gmail.com",
       "subject": "testing ke 2",
       "message": "testing ke 2 testing ke 2"
+    },
+    {
+      "id": "a49c",
+      "name": "M Dede Alfaruq",
+      "email": "dede.alfaruqq@gmail.com",
+      "subject": "I want to work with you",
+      "message": "Please give me some answer"
+    },
+    {
+      "id": "3772",
+      "name": "xxxx",
+      "email": "xxxx@gmail.com",
+      "subject": "xxxx",
+      "message": "xxxx"
+    },
+    {
+      "id": "8d01",
+      "name": "JDD",
+      "email": "jd@gmail.com",
+      "subject": "jdd",
+      "message": "jddd"
+    },
+    {
+      "id": "0664",
+      "name": "Testing ke 3",
+      "email": "testke3@gmail.com",
+      "subject": "testing ke 3",
+      "message": "testing ke 3"
     }
   ]
 }

@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import contactMeDataReducer from "../features/contactMe/submitFormSlice";
+import contactUsDataReducer from "../features/contactUs/contactUsSlicer";
 
 export const store = configureStore({
   reducer: {
-    contactMe: contactMeDataReducer,
+    contactUs: contactUsDataReducer,
   },
 });
 

@@ -1,20 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { ContactUsData } from "../../types/contactUs";
 import axios from "axios";
 
-type SubmitFormData = {
+interface SubmitFormData {
   name: string;
   email: string;
   subject: string;
   message: string;
-};
+}
 
-// Submit form action
+// Interface for initialState for data submit
 interface SubmitFormDataState {
-  lists: ContactMeData[];
+  lists: ContactUsData[];
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null | undefined;
 }
 
+// Initial state
 const initialState: SubmitFormDataState = {
   lists: [],
   status: "idle",
@@ -27,13 +29,13 @@ export const submitForm = createAsyncThunk(
   async (contactData: SubmitFormData, { rejectWithValue }) => {
     try {
       const { status } = await axios.post(
-        "http://localhost:3000/contact-me",
+        "http://localhost:3000/contact-us",
         contactData
       );
 
       if (status !== 201) throw new Error("Failed to send your message");
 
-      // return submitted data and add to lists
+      // return submitted data
       return contactData;
     } catch (error: unknown) {
       // handle error as an instance of Error object
@@ -48,9 +50,9 @@ export const submitForm = createAsyncThunk(
 export const fetchSubmittedForm = createAsyncThunk(
   "contactUs/fetchSubmittedForm",
   async () => {
-    const submittedData = await axios.get("http://localhost:3000/contact-me");
+    const submittedData = await axios.get("http://localhost:3000/contact-us");
     console.log(submittedData);
-    return submittedData.data as ContactMeData[];
+    return submittedData.data as ContactUsData[];
   }
 );
 

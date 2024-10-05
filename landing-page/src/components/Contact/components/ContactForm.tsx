@@ -5,13 +5,14 @@ import TextInput from "./TextInput/TextInput";
 // import axios from "axios";
 import * as Yup from "yup";
 import { useAppDispatch, useAppSelector } from "../../../hooks/useSelector";
-import { submitForm } from "../../../features/contactMe/submitFormSlice";
+import { submitForm } from "../../../features/contactUs/contactUsSlicer";
+import { ContactUs } from "../../../types/contactUs";
 
 const ContactForm: FC = () => {
   const dispatch = useAppDispatch();
-  const { error, status } = useAppSelector((state) => state.contactMe);
+  const { error, status } = useAppSelector((state) => state.contactUs);
 
-  const initialValues: ContactMe = {
+  const initialValues: ContactUs = {
     name: "",
     email: "",
     subject: "",
@@ -19,9 +20,9 @@ const ContactForm: FC = () => {
   };
 
   // form submit on click handle
-  const handleContactMe = async (
-    values: ContactMe,
-    formikHelpers: FormikHelpers<ContactMe>
+  const handleContactUs = async (
+    values: ContactUs,
+    formikHelpers: FormikHelpers<ContactUs>
   ) => {
     console.log("button contact me clicked");
 
@@ -69,12 +70,12 @@ const ContactForm: FC = () => {
         )}
         {status === "succeeded" && (
           <div className="w-full font-bold text-[16px] bg-light-gray p-20px rounded-md">
-            Your message was sent!
+            Message has been sent.
           </div>
         )}
 
         <Formik
-          onSubmit={handleContactMe}
+          onSubmit={handleContactUs}
           initialValues={initialValues}
           validationSchema={validationSchema}
         >
