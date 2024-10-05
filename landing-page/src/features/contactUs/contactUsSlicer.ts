@@ -25,7 +25,7 @@ const initialState: SubmitFormDataState = {
 
 // Action : submit form data into API
 export const submitForm = createAsyncThunk(
-  "contactUs/submitForm",
+  "contactUsData/submitForm", // Action type prefix
   async (contactData: SubmitFormData, { rejectWithValue }) => {
     try {
       const { status } = await axios.post(
@@ -48,7 +48,7 @@ export const submitForm = createAsyncThunk(
 
 // Action : get submitted form data from API
 export const fetchSubmittedForm = createAsyncThunk(
-  "contactUs/fetchSubmittedForm",
+  "contactUsData/fetchSubmittedForm", // Action type prefix
   async () => {
     const submittedData = await axios.get("http://localhost:3000/contact-us");
     console.log(submittedData);
@@ -57,7 +57,7 @@ export const fetchSubmittedForm = createAsyncThunk(
 );
 
 const contactUsDataSlice = createSlice({
-  name: "contactUsData",
+  name: "contactUsData", // slice name
   initialState,
   reducers: {},
   extraReducers: (builder) => {
